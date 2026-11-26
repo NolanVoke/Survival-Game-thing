@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dt6v7w1pg3gu1" path="res://icon.svg" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://csnqwoevfsbgl" path="res://status.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://d1j1ebxxhjonw" path="res://hud.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dtbmgun5u1cc8" path="res://game_over.gd" id="5_7mycd"]
+[ext_resource type="FontFile" uid="uid://016d2dp7pf0g" path="res://assets/times.ttf" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyvxr"]
 size = Vector2(128, 128)
@@ -175,3 +177,37 @@ theme_override_styles/background = SubResource("StyleBoxFlat_xxs8r")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2hocj")
 fill_mode = 3
 show_percentage = false
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=890637391 node_paths=PackedStringArray("status")]
+layer = 2
+script = ExtResource("5_7mycd")
+status = NodePath("../Player/status")
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=818496992]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2627451)
+
+[node name="Label" type="Label" parent="GameOver" unique_id=1650782690]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.5
+offset_top = -22.5
+offset_right = 118.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7806942, 4.548356e-06, 4.813075e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_lquwl")
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+uppercase = true

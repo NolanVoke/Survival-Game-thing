@@ -22,13 +22,13 @@ var energy := 100.0:
 		
 #status change rates
 const HUNGERRATE = 0.0556 
-const THIRSTRATE = 0.111
+const THIRSTRATE = 10.0 #0.111
 const ENERGYRATE = 0.0278
-const HEALTHLOSSRATE = 1.67
+const HEALTHLOSSRATE = 20.0 #1.67
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,3 +46,4 @@ func _process(delta: float) -> void:
 		health -= HEALTHLOSSRATE * delta
 	if energy == 0:
 		health -= HEALTHLOSSRATE * delta
+		
