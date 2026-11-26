@@ -2,44 +2,176 @@
 
 [ext_resource type="Script" uid="uid://bnoye4i6kahp8" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://dt6v7w1pg3gu1" path="res://icon.svg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://csnqwoevfsbgl" path="res://status.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://d1j1ebxxhjonw" path="res://hud.gd" id="4_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyvxr"]
 size = Vector2(128, 128)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o45a"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp26k"]
+bg_color = Color(0.83137256, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b260e"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de4uc"]
+bg_color = Color(3.85046e-07, 0.7839616, 0.94615024, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvm18"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qxqg"]
+bg_color = Color(0.24154785, 0.7919759, 3.85046e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxs8r"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hocj"]
+bg_color = Color(1, 1, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="Main" type="Node2D" unique_id=1709930304]
 
-[node name="level1" type="Node2D" parent="." unique_id=1591446170]
+[node name="world" type="Node2D" parent="." unique_id=1591446170]
 
-[node name="Player" type="CharacterBody2D" parent="level1" unique_id=2029481407]
-script = ExtResource("1_0xm2m")
-
-[node name="Sprite-player" type="Sprite2D" parent="level1/Player" unique_id=1770682198]
-texture = ExtResource("2_h2yge")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="level1/Player" unique_id=1264102067]
-position = Vector2(-1, -1)
-shape = SubResource("RectangleShape2D_qyvxr")
-
-[node name="Camera2D" type="Camera2D" parent="level1/Player" unique_id=1578094150]
-
-[node name="Sprite2D" type="Sprite2D" parent="level1" unique_id=1945991166]
+[node name="Sprite2D" type="Sprite2D" parent="world" unique_id=1945991166]
 position = Vector2(557, -244)
 scale = Vector2(1, 11.68)
 texture = ExtResource("2_h2yge")
 
-[node name="Sprite2D2" type="Sprite2D" parent="level1" unique_id=2098717070]
+[node name="Sprite2D2" type="Sprite2D" parent="world" unique_id=2098717070]
 position = Vector2(-32.000004, -344)
 rotation = 1.5893067
 scale = Vector2(1, 11.68)
 texture = ExtResource("2_h2yge")
 
-[node name="Sprite2D3" type="Sprite2D" parent="level1" unique_id=604981769]
+[node name="Sprite2D3" type="Sprite2D" parent="world" unique_id=604981769]
 position = Vector2(-499, -206.00002)
 scale = Vector2(1, 11.68)
 texture = ExtResource("2_h2yge")
 
-[node name="Sprite2D4" type="Sprite2D" parent="level1" unique_id=548668010]
+[node name="Sprite2D4" type="Sprite2D" parent="world" unique_id=548668010]
 position = Vector2(1.5258789e-05, 434.00006)
 rotation = -1.5639242
 scale = Vector2(1, 11.68)
 texture = ExtResource("2_h2yge")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1965331852]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite-player" type="Sprite2D" parent="Player" unique_id=296603255]
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1713362626]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_qyvxr")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=621931833]
+
+[node name="status" type="Node2D" parent="Player" unique_id=983465378]
+script = ExtResource("3_h2yge")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1114390393 node_paths=PackedStringArray("stats")]
+script = ExtResource("4_1bvp3")
+stats = NodePath("../Player/status")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=173576568]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer" unique_id=1434126047]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HealthBar" type="ProgressBar" parent="HUD/MarginContainer/HBoxContainer" unique_id=394033662]
+custom_minimum_size = Vector2(30, 150)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8o45a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jp26k")
+fill_mode = 3
+show_percentage = false
+
+[node name="ThirstBar" type="ProgressBar" parent="HUD/MarginContainer/HBoxContainer" unique_id=794790994]
+custom_minimum_size = Vector2(30, 150)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_b260e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_de4uc")
+fill_mode = 3
+show_percentage = false
+
+[node name="HungerBar" type="ProgressBar" parent="HUD/MarginContainer/HBoxContainer" unique_id=1692305636]
+custom_minimum_size = Vector2(30, 150)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_yvm18")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5qxqg")
+fill_mode = 3
+show_percentage = false
+
+[node name="EnergyBar" type="ProgressBar" parent="HUD/MarginContainer/HBoxContainer" unique_id=1413353554]
+custom_minimum_size = Vector2(30, 150)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_xxs8r")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2hocj")
+fill_mode = 3
+show_percentage = false

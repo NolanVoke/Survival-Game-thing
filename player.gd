@@ -13,7 +13,10 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_down")
-	velocity = input_dir * SPEED
+	if Input.is_action_pressed("sprint"):
+		velocity = input_dir * SPEED * 1.75
+	else:
+		velocity = input_dir * SPEED
 	move_and_slide()
 
 	
